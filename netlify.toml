@@ -1,0 +1,7 @@
+[build]
+  publish = "EpochDev"
+  
+[build.environment]
+  NODE_VERSION = "22.20.0"
+  
+# No functions directory - this is a static site
