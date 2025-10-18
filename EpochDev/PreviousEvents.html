@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles.css">
+  <link rel="icon" href="Pictures/PreviousEvents/EpochDev (Just Logo).png">
+  <title>Previous Events - EpochDev</title>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-container">
+        <a href="Index.html" class="logo">
+          <div class="logo-icon">
+            <img src="Pictures/PreviousEvents/EpochDev (Just Logo).png" alt="EpochDev Logo">
+          </div>
+          <span class="highlight">Epoch</span>Dev
+        </a>
+        <ul class="nav-links">
+          <li><a href="Index.html#events">Events</a></li>
+          <li><a href="Index.html#about">About Us</a></li>
+          <li><a href="PreviousEvents.html#resources">Resources</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <img src="Pictures/PreviousEvents/moon.png" alt="Toggle theme" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding:6rem 0;">
+    <div class="container" style="text-align:center;">
+      <h1 class="section-title">Previous <span class="highlight">Events</span></h1>
+      <p class="section-subtitle">
+        Explore the milestones and achievements of EpochDev through our past hackathons and workshops.
+      </p>
+      <div class="previous-events-grid">
+        <!-- Event 2: Computer Vision 101 Workshop -->
+        <div class="event-card">
+          <div class="event-image">
+            <img src="Pictures/PreviousEvents/workshop1.png" alt="Computer Vision 101 Workshop" style="width: 850px;" />
+          </div>
+
+          <div class="event-content">
+            <h3>🧠 Computer Vision 101 Workshop</h3>
+            <ul class="icon-list">
+              <li><span class="icon">📅</span> <b>Date:</b> October 16th 2025</li>
+              <li><span class="icon">📍</span> <b>Location:</b> National College of Ireland - Spencer Dock Building Room 3.05</li>
+              <li><span class="icon">👥</span> <b>Participants:</b> 15 </li>
+            </ul>
+
+            <p class="event-description">
+              Our first workshop introduced the fundamentals of <b>Computer Vision</b>—pixels, features, and simple recognition
+              pipelines—with a short live demo and hands-on practice.
+            </p>
+
+            <div class="event-content">
+              <h4>📘 Workshop Outline</h4>
+              <ul class="icon-list">
+                <li><span class="icon"> 📷</span><b>Image basics: pixels, channels, resolution</b></li>
+                <li><span class="icon"> 🔍</span><b>Edges & features at a glance</b></li>
+                <li><span class="icon"> 🧠</span><b>From features to simple classifiers</b></li>
+                <li><span class="icon"> 💻</span><b>Mini live demo</b></li>
+              </ul>
+
+            </div>
+
+            <!-- 🔎 Project Spotlight (updated to your repo) -->
+            <div class="event-content">
+              <h4>🌟 Project Spotlight — MNIST Classification</h4>
+              <p style="margin-bottom:.5rem">
+                A clean baseline digit classifier on the MNIST dataset with training + evaluation scripts.
+                <br>
+                <a href="https://github.com/Epochdev0/MNIST-Classification" target="_blank">🔗 GitHub: MNIST-Classification</a>
+              </p>
+              <ul class="icon-list">
+                <li><span class="icon">⚙️</span><span>Stack: Python + DL framework (see repo)</span></li>
+                <li><span class="icon">🎯</span><span>Goal: quick, reproducible baseline for CV101</span></li>
+              </ul>
+            </div>
+
+            <div class="event-content">
+              <h4>📚 Resources</h4>
+              <ul class="icon-list">
+                <li><a href="Pictures/PreviousEvents/resource/Computer Vision 101.pdf" target="_blank">📑  Slides</a></li>
+                <li><a href="https://github.com/Epochdev0/MNIST-Classification" target="_blank">🧪  MNIST-Classification Repo</a></li>
+                <li>
+                  <details style="margin-top:.5rem">
+                    <summary>💾 Code Examples (generic)</summary>
+                      <ol style="margin-top:.5rem">
+                        <li><code>git clone https://github.com/Epochdev0/MNIST-Classification.git</code></li>
+                        <li><code>cd MNIST-Classification</code></li>
+                        <li>Create env (pick one):<br>
+                          <code>python -m venv .venv && . .venv/bin/activate</code> (macOS/Linux)<br>
+                          <code>python -m venv .venv &amp;&amp; .\\.venv\\Scripts\\activate</code> (Windows)
+                        </li>
+                        <li><code>pip install -r requirements.txt</code></li>
+                        <li>Run training (example): <code>python train.py</code></li>
+                        <li>Evaluate/visualise (example): <code>python evaluate.py</code> or open the provided notebook</li>
+                      </ol>
+                  </details>
+                </li>    
+              </ul>
+            </div>
+
+            <a href="https://www.linkedin.com/company/epochdev/posts/?feedView=all"
+              target="_blank"
+              class="learn-more-btn">
+              View Full Post on LinkedIn
+            </a>
+          </div>
+        </div>
+        <br>
+        <!-- Event 1: NASA Space Apps -->
+        <div class="event-card">
+          <div class="event-image">
+            <img src="Pictures/PreviousEvents/nasa-spaceapps.png" alt="NASA Space Apps Hackathon" style="width: 850px; "/>
+          </div>
+          <div class="event-content">
+            <h3>🌌 NASA Space Apps Challenge 2025</h3>
+            <ul class="icon-list">
+              <li>📅 <b>Date:</b> October 4th - 5th, 2025</li>
+              <li>📍 <b>Location:</b> National College of Ireland, Dublin</li>
+              <li>👥 <b>Teams:</b> 2 (6-7 participants each)</li>
+            </ul>
+            
+            <p class="event-description">
+              The NASA Space Apps Challenge united two innovative EpochDev teams tackling real-world space data challenges. 
+              Participants built advanced AI tools for interpreting astronomical and biological datasets, combining 
+              creativity and technical excellence.
+            </p>
+
+            <div class="event-content">
+              <h4>🚀 Team 1: EpochDevNLP</h4>
+              <p><b>Members:</b> Amir Freer, Aditya Patil, Edward Chvainickas, Enis ŞimşİR, Harsha Varthan</p>
+              <ul class="icon-list">
+                <li><span class="icon">🔗</span> Visual knowledge graphs connecting experiments, genes, and findings</li>
+                <li><span class="icon">💬</span> Natural-language chatbot with referenced answers</li>
+                <li><span class="icon">📊</span> Interactive charts and filtering tools</li>
+              </ul>
+            </div>
+
+            <div class="event-content">
+              <h4>🛰️ Team 2: EpochDev ComV</h4>
+              <p><b>Members:</b> Anujin Ariunbold, Dhruv Waghela, Pawan Badsewal, Manisha Mani, 
+                Deepak Chandra Nallamothu, Temuulen Munkhtaivan, Johnpaul Ajuzie</p>
+              <ul class="icon-list">
+                <li><span class="icon">⚡</span><b>ExoVision</b> — classifies light-curve signals in seconds using Kepler-inspired features</li>
+                <li><span class="icon">📈</span> Real-time single-signal and scalable batch mode (CSV upload)</li>
+                <li><span class="icon">🧠</span> Stack: XGBoost, FastAPI, React</li>
+                <li><span class="icon">🌍</span> Sustainability: optimized compute and cloud-friendly deployment</li>
+                <li><span class="icon">🔭</span> Roadmap: deep learning integration, live updates, and open collaboration</li>
+              </ul>
+            </div>
+
+            <a href="https://www.linkedin.com/company/epochdev/posts/?feedView=all" target="_blank" class="learn-more-btn">
+              View Full Post on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="resources">
+        <div class="container">
+            <h2 class="section-title">Learning <span class="highlight">Resources</span></h2>
+            <p class="section-subtitle">Access our curated collection of learning materials, tools, and community resources</p>
+            
+            
+
+            <div class="quick-access">
+
+                <a style="text-decoration: none;" href="https://www.instagram.com/nci_epochdev/">
+
+                    <div class="quick-access-item">
+                        <img style="width: 50px;" src="Pictures/FrontPage/instagram.png" alt="logo-icon">
+                        <h3>Instagram</h3>
+                        <p>Our official Instagram page</p>
+                    </div>
+
+                </a>
+                <a style="text-decoration: none;" href="https://github.com/Epochdev0">
+                        
+                    <div class="quick-access-item">
+                        <img style="width: 50px;" src="Pictures/PreviousEvents/github.png" alt="logo-icon">
+                        <h3>GitHub Organization</h3>
+                        <p>Access our open-source projects</p>
+                    </div>
+
+                </a>
+                    
+                <div class="quick-access-item">
+                    <img style="width: 50px;" src="Pictures/PreviousEvents/mail.png" alt="logo-icon">
+                    <h3>Newsletter</h3>
+                    <p>In Workshop 🛠️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <script src="Script.js"></script>
+  <script src="Events.js" defer></script>
+
+</body>
+<footer class="site-footer container">
+  <p>© <span id="year">2025</span> EpochDev</p>
+</footer>
