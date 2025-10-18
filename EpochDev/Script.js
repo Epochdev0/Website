@@ -1,6 +1,3 @@
-// ✅ EpochDev Interactive Hackathon Loader (Ireland-based)
-// --------------------------------------------------
-
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -8,7 +5,7 @@ function toggleTheme() {
   localStorage.setItem('theme', newTheme);
 
   const themeBtnImg = document.querySelector('.theme-toggle img');
-  themeBtnImg.src = newTheme === 'dark' ? 'Pictures/light.png' : 'Pictures/moon.png';
+  themeBtnImg.src = newTheme === 'dark' ? 'Pictures/FrontPage/light.png' : 'Pictures/FrontPage/moon.png';
   themeBtnImg.alt = newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
 }
 
@@ -19,7 +16,7 @@ function loadTheme() {
   document.documentElement.setAttribute('data-theme', theme);
 
   const themeBtnImg = document.querySelector('.theme-toggle img');
-  themeBtnImg.src = theme === 'dark' ? 'Pictures/light.png' : 'Pictures/moon.png';
+  themeBtnImg.src = theme === 'dark' ? 'Pictures/FrontPage/light.png' : 'Pictures/FrontPage/moon.png';
   themeBtnImg.alt = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
 }
 
