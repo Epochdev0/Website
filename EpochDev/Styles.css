@@ -199,6 +199,7 @@ section { padding:
   margin-top: 3rem;
 }
 .event-card {
+  overflow: hidden;    
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
@@ -307,12 +308,31 @@ section { padding:
   gap: 16px;
 }
 
-.event-media img {
-  width: 50%;
-  height: 90px;
-  object-fit: cover;
-  display: block;
+
+.event-image {
+  border-radius: 12px;         
+  overflow: hidden;           
 }
+
+.event-image img {
+  display: block;          
+  width: 100%;                
+  height: auto;              
+  max-width: 100%;             
+}
+
+
+@supports (aspect-ratio: 16/9) {
+  .event-image {
+    aspect-ratio: 16 / 9;   
+  }
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 
 .event-body { 
   padding: 16px; 
