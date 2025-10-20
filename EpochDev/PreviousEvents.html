@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Styles.css">
-  <link rel="icon" href="Pictures/PreviousEvents/EpochDev (Just Logo).png">
+  <link rel="icon" href="Pictures/PreviousEvents/main/EpochDev (Just Logo).png">
   <title>Previous Events - EpochDev</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
       <div class="nav-container">
         <a href="Index.html" class="logo">
           <div class="logo-icon">
-            <img src="Pictures/PreviousEvents/EpochDev (Just Logo).png" alt="EpochDev Logo">
+            <img src="Pictures/PreviousEvents/main/EpochDev (Just Logo).png" alt="EpochDev Logo">
           </div>
           <span class="highlight">Epoch</span>Dev
         </a>
@@ -24,24 +24,93 @@
         </ul>
         <div class="nav-actions">
           <button class="theme-toggle" onclick="toggleTheme()">
-            <img src="Pictures/PreviousEvents/moon.png" alt="Toggle theme" />
+            <img src="Pictures/PreviousEvents/main/moon.png" alt="Toggle theme" />
           </button>
         </div>
       </div>
     </div>
   </nav>
 
-  <section class="hero" style="padding:6rem 0;">
-    <div class="container" style="text-align:center;">
+  <section class="hero">
+    <div class="container">
       <h1 class="section-title">Previous <span class="highlight">Events</span></h1>
       <p class="section-subtitle">
         Explore the milestones and achievements of EpochDev through our past hackathons and workshops.
       </p>
       <div class="previous-events-grid">
         <!-- Event 2: Computer Vision 101 Workshop -->
-        <div class="event-card">
-          <div class="event-image">
-            <img src="Pictures/PreviousEvents/workshop1.png" alt="Computer Vision 101 Workshop"  />
+        <div class="PrevEvents-card">
+          <div class="event-image event-image--slider">
+            <!-- Image Slider -->
+            <section class="slider slider--16x9" aria-roledescription="carousel">
+              <div class="slider__viewport" aria-live="polite">
+                <div class="slider__track">
+                  <!-- Slide 1 -->
+                  <figure class="slide" aria-label="1 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop1.png" alt="ComVision 101"
+                        loading="lazy" />
+                  </figure>
+
+                  <!-- Slide 2 -->
+                  <figure class="slide" aria-label="2 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop2.jpeg" alt="ppt session"
+                        loading="lazy" />
+                    <figcaption>Presentation Session</figcaption>
+                  </figure>
+
+                  <!-- Slide 3 -->
+                  <figure class="slide" aria-label="3 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop3.jpeg" alt="ppt session"
+                        loading="lazy" />
+                    <figcaption>Presentation Session</figcaption>
+                  </figure>
+
+                  <!-- Slide 4 -->
+                  <figure class="slide" aria-label="4 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop4.jpeg" alt="pizza"
+                        loading="lazy" />
+                    <figcaption>Pizza Time! 🍕 </figcaption>
+                  </figure>
+
+                  <!-- Slide 5 -->
+                  <figure class="slide" aria-label="5 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop5.jpeg" alt="nerd"
+                        loading="lazy" />
+                    <figcaption>☝️🤓</figcaption>
+                  </figure>
+
+                  <!-- Slide 6 -->
+                  <figure class="slide" aria-label="6 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop6.jpeg" alt="demo"
+                        loading="lazy" />
+                    <figcaption>Live Code Demo</figcaption>
+                  </figure>
+
+                  <!-- Slide 7 -->
+                  <figure class="slide" aria-label="7 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop7.jpeg" alt="session"
+                        loading="lazy" />
+                    <figcaption>During The Session</figcaption>
+                  </figure>
+
+                  <!-- Slide 8 -->
+                  <figure class="slide" aria-label="8 of 8">
+                    <img src="Pictures/PreviousEvents/Workshop-1/workshop8.jpeg" alt="session"
+                        loading="lazy" />
+                    <figcaption>During The Session</figcaption>
+                  </figure>
+
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <button class="slider__btn slider__btn--prev" aria-label="Previous slide">‹</button>
+              <button class="slider__btn slider__btn--next" aria-label="Next slide">›</button>
+
+              <!-- Dots -->
+              <div class="slider__dots" role="tablist" aria-label="Slide navigation"></div>
+            </section>
+
           </div>
 
           <div class="event-content">
@@ -68,7 +137,6 @@
 
             </div>
 
-            <!-- 🔎 Project Spotlight (updated to your repo) -->
             <div class="event-content">
               <h4>🌟 Project Spotlight — MNIST Classification</h4>
               <p style="margin-bottom:.5rem">
@@ -113,11 +181,10 @@
             </a>
           </div>
         </div>
-        <br>
         <!-- Event 1: NASA Space Apps -->
-        <div class="event-card">
+        <div class="PrevEvents-card">
           <div class="event-image">
-            <img src="Pictures/PreviousEvents/nasa-spaceapps.png" alt="NASA Space Apps Hackathon" />
+            <img src="Pictures/PreviousEvents/Hackathon-1/nasa-spaceapps.png" alt="NASA Space Apps Hackathon" />
           </div>
           <div class="event-content">
             <h3>🌌 NASA Space Apps Challenge 2025</h3>
@@ -177,7 +244,7 @@
                 <a style="text-decoration: none;" href="https://www.instagram.com/nci_epochdev/">
 
                     <div class="quick-access-item">
-                        <img style="width: 50px;" src="Pictures/FrontPage/instagram.png" alt="logo-icon">
+                        <img style="width: 50px;" src="Pictures/PreviousEvents/main/instagram.png" alt="logo-icon">
                         <h3>Instagram</h3>
                         <p>Our official Instagram page</p>
                     </div>
@@ -186,7 +253,7 @@
                 <a style="text-decoration: none;" href="https://github.com/Epochdev0">
                         
                     <div class="quick-access-item">
-                        <img style="width: 50px;" src="Pictures/PreviousEvents/github.png" alt="logo-icon">
+                        <img style="width: 50px;" src="Pictures/PreviousEvents/main/github.png" alt="logo-icon">
                         <h3>GitHub Organization</h3>
                         <p>Access our open-source projects</p>
                     </div>
@@ -194,7 +261,7 @@
                 </a>
                     
                 <div class="quick-access-item">
-                    <img style="width: 50px;" src="Pictures/PreviousEvents/mail.png" alt="logo-icon">
+                    <img style="width: 50px;" src="Pictures/PreviousEvents/main/mail.png" alt="logo-icon">
                     <h3>Newsletter</h3>
                     <p>In Workshop 🛠️</p>
                 </div>
@@ -204,8 +271,7 @@
 
 
   <script src="Script.js"></script>
-  <script src="Events.js" defer></script>
-
+  <script src="slider.js"></script>
 </body>
 <footer class="site-footer container">
   <p>© <span id="year">2025</span> EpochDev</p>
