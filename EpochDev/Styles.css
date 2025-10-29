@@ -107,6 +107,94 @@ section { padding: 50px 0; }
 .section-subtitle { text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
 .highlight { color: var(--primary-color); }
 
+/* ===== Previous Events Slider Styles ===== */
+.prev-events { --card-w: 320px; --gap: 1rem; --radius: 16px; }
+.prev-events .pe-header { text-align:center; margin-bottom: 1rem; }
+.prev-events .pe-header h2 { margin: 0 0 .25rem; }
+
+.pe-slider {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  gap: .5rem;
+}
+
+.pe-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--card-w);
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: .5rem;
+  scrollbar-width: thin;
+}
+.pe-track::-webkit-scrollbar { height: 8px; }
+.pe-track::-webkit-scrollbar-thumb { border-radius: 8px; }
+.pe-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pe-link:hover .pe-card,
+.pe-link:focus .pe-card {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.pe-card {
+  cursor: pointer;
+}
+
+.pe-card {
+  scroll-snap-align: start;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 180px auto;   /* consistent height */
+}
+
+.pe-media {
+  position: relative;
+  height: 100%;
+  background: #0b1b20;
+}
+.pe-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* prevents tall/wide images from stretching */
+  display: block;
+}
+
+.pe-body { padding: .9rem; }
+.pe-body h3 { margin: 0 0 .25rem; font-size: 1rem; }
+.pe-body p  { margin: 0; opacity: .8; }
+
+.pe-nav {
+  border: 0;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.pe-nav:hover { background: rgba(0,0,0,.55); }
+
+/* Responsive: show wider cards on big screens; stack easily on phones */
+@media (max-width: 480px) {
+  .prev-events { --card-w: 78vw; }
+}
+@media (min-width: 900px) {
+  .prev-events { --card-w: 360px; }
+}
+
+
 /*= Events (Upcoming + Previous) =*/
 .events-grid {
   display: grid;
