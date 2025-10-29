@@ -84,3 +84,39 @@
   render();
 })();
 
+
+// ===== Previous Events Slider Logic =====
+(function () {
+  const track = document.getElementById('peTrack');
+  const prevBtn = document.querySelector('.pe-nav.prev');
+  const nextBtn = document.querySelector('.pe-nav.next');
+
+  const cardWidth = () => track.querySelector('.pe-card')?.offsetWidth || 320;
+  const snap = () => track.scrollBy({ left: cardWidth() + 16, behavior: 'smooth' });
+
+  prevBtn.addEventListener('click', () =>
+    track.scrollBy({ left: -(cardWidth() + 16), behavior: 'smooth' })
+  );
+  nextBtn.addEventListener('click', snap);
+
+  // Keyboard support
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft')  prevBtn.click();
+  });
+
+  // Drag / swipe
+  let startX = 0, startScroll = 0, isDown = false;
+  track.addEventListener('pointerdown', (e) => {
+    isDown = true; startX = e.clientX; startScroll = track.scrollLeft;
+    track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    track.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  ['pointerup','pointercancel','mouseleave'].forEach(evt =>
+    track.addEventListener(evt, () => (isDown = false))
+  );
+})();
+
