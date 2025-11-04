@@ -1,1 +1,1 @@
-Welcome to EpochDev Club!
+Welcome to EpochDev's Official Website Repo!
