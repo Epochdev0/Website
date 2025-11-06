@@ -107,92 +107,99 @@ section { padding: 50px 0; }
 .section-subtitle { text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
 .highlight { color: var(--primary-color); }
 
-/* ===== Previous Events Slider Styles ===== */
-.prev-events { --card-w: 320px; --gap: 1rem; --radius: 16px; }
+/* ===== Previous Events Slider  ===== */
+.prev-events { --gap: 18px; --radius: 16px; --per-view: 1; }
 .prev-events .pe-header { text-align:center; margin-bottom: 1rem; }
 .prev-events .pe-header h2 { margin: 0 0 .25rem; }
 
-.pe-slider {
+@media (min-width: 640px){ .prev-events { --per-view: 2; } }
+@media (min-width: 1024px){ .prev-events { --per-view: 3; } }
+
+.pe-slider{
   position: relative;
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto 1fr auto;
-  gap: .5rem;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.pe-track {
+/* Track = horizontal row of cards */
+.pe-track{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: var(--card-w);
+  /* each card gets a responsive width:
+     (container - gaps) / per-view */
+  grid-auto-columns: calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
   gap: var(--gap);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
   padding: .5rem;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   scrollbar-width: thin;
 }
 .pe-track::-webkit-scrollbar { height: 8px; }
 .pe-track::-webkit-scrollbar-thumb { border-radius: 8px; }
-.pe-link {
+
+.pe-link{
   text-decoration: none;
   color: inherit;
   display: block;
   scroll-snap-align: start;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-
 .pe-link:hover .pe-card,
-.pe-link:focus .pe-card {
+.pe-link:focus .pe-card{
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-.pe-card {
-  cursor: pointer;
-}
-
-.pe-card {
-  scroll-snap-align: start;
+.pe-card{
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 180px auto;   /* consistent height */
+  grid-template-rows: auto 1fr; /* media then body */
+  cursor: pointer;
 }
 
-.pe-media {
-  position: relative;
-  height: 100%;
+/* Media area — consistent height across images */
+.pe-media{
+  aspect-ratio: 16 / 9;
   background: #0b1b20;
 }
-.pe-media img {
+.pe-media img{
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* prevents tall/wide images from stretching */
+  object-fit: cover; /* keeps mixed sizes tidy */
   display: block;
 }
 
-.pe-body { padding: .9rem; }
-.pe-body h3 { margin: 0 0 .25rem; font-size: 1rem; }
-.pe-body p  { margin: 0; opacity: .8; }
+.pe-body{ padding: .9rem; }
+.pe-body h3{ margin: 0 0 .25rem; font-size: 1rem; }
+.pe-body p{ margin: 0; opacity: .85; }
 
-.pe-nav {
-  border: 0;
-  background: rgba(0,0,0,.35);
-  color: #fff;
-  width: 40px; height: 40px;
-  border-radius: 999px;
-  cursor: pointer;
+/* Arrows (your HTML uses .slider__btn) */
+.slider__btn{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 999px; border: 0;
+  background: rgba(0,0,0,.35); color: #fff; font-size: 22px; line-height: 1;
+  display: grid; place-items: center; cursor: pointer;
 }
-.pe-nav:hover { background: rgba(0,0,0,.55); }
+.slider__btn:hover{ background: rgba(0,0,0,.55); }
+.slider__btn[disabled]{ opacity: .45; cursor: not-allowed; }
+.slider__btn--prev{ left: -8px; }
+.slider__btn--next{ right: -8px; }
 
-/* Responsive: show wider cards on big screens; stack easily on phones */
-@media (max-width: 480px) {
-  .prev-events { --card-w: 78vw; }
+/* Dots */
+.slider__dots{
+  display: flex; gap: 8px; justify-content: center;
+  margin-top: 12px;
 }
-@media (min-width: 900px) {
-  .prev-events { --card-w: 360px; }
+.slider__dots button{
+  width: 8px; height: 8px; border-radius: 999px; border: 0;
+  background: rgba(255,255,255,.35); cursor: pointer;
 }
+.slider__dots button.is-active{ background: rgba(255,255,255,.95); }
 
 
 /*= Events (Upcoming + Previous) =*/
@@ -249,7 +256,7 @@ section { padding: 50px 0; }
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 50px;
+  padding: 10px;
   text-align: center;
   margin-top: 3rem;
   cursor: pointer;
