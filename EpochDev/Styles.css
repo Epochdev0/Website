@@ -107,7 +107,7 @@ section { padding: 50px 0; }
 .section-subtitle { text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
 .highlight { color: var(--primary-color); }
 
-/* ===== Previous Events Slider  ===== */
+/* = Previous Events Slider  = */
 .prev-events { --gap: 18px; --radius: 16px; --per-view: 1; }
 .prev-events .pe-header { text-align:center; margin-bottom: 1rem; }
 .prev-events .pe-header h2 { margin: 0 0 .25rem; }
