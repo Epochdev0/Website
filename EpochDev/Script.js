@@ -101,3 +101,60 @@ async function loadEventbriteHackathons() {
 
 
 document.addEventListener('DOMContentLoaded', createHackathonButton);
+
+
+(function(){
+  const slider = document.getElementById('peSlider');
+  if(!slider) return;
+
+  const track = slider.querySelector('#peTrack');
+  const cards = Array.from(track.querySelectorAll('.pe-card'));
+  const prevBtn = slider.querySelector('.pe-nav--prev');
+  const nextBtn = slider.querySelector('.pe-nav--next');
+  const dotsWrap = slider.querySelector('.pe-dots');
+
+  let index = 0;
+
+  function perView(){
+    return window.matchMedia('(min-width:1024px)').matches ? 3
+         : window.matchMedia('(min-width:640px)').matches ? 2
+         : 1;
+  }
+
+  function maxIndex(){
+    return Math.max(0, cards.length - perView());
+  }
+
+  function buildDots(){
+    if(!dotsWrap) return;
+    dotsWrap.innerHTML = '';
+    for(let i=0;i<=maxIndex();i++){
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.addEventListener('click', ()=>{ index=i; render(); });
+      dotsWrap.appendChild(b);
+    }
+  }
+
+  function render(){
+    index = Math.max(0, Math.min(index, maxIndex()));
+    const cardW = cards[0]?.getBoundingClientRect().width || 320;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 18);
+    track.scrollTo({ left: index * (cardW + gap), behavior: 'smooth' });
+
+    if(prevBtn) prevBtn.disabled = index === 0;
+    if(nextBtn) nextBtn.disabled = index === maxIndex();
+
+    if(dotsWrap){
+      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('is-active', i===index));
+    }
+  }
+
+  buildDots();
+  render();
+
+  prevBtn?.addEventListener('click', ()=>{ index--; render(); });
+  nextBtn?.addEventListener('click', ()=>{ index++; render(); });
+
+  window.addEventListener('resize', ()=>{ buildDots(); render(); }, {passive:true});
+})();
