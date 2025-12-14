@@ -287,15 +287,12 @@ section { padding: 50px 0; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
-.slider__viewport {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-}
-
+.slider__viewport { overflow: hidden; }
 .slider__track {
-  display: flex;
-  transition: transform 0.5s ease;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transition: transform .45s ease;
 }
 
 .slide {
