@@ -18,6 +18,7 @@
                     <span class="highlight">Epoch</span>Dev
                 </a>
                 <ul class="nav-links">
+                    <li><a href="#announcement">Announcement</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#resources">Resources</a></li>
@@ -112,6 +113,68 @@
                     <p>Showcasing</p>
                 </div>
             </div>
+
+            <br><br>
+            <!-- Announcements -->
+            <section id="announcement">
+                <script>
+                    document.querySelectorAll('.announcement-card').forEach(card => {
+                        card.addEventListener('click', () => {
+                            card.classList.toggle('active');
+                        });
+                    });
+
+                    document.querySelectorAll('.slider').forEach(slider => {
+                        const slides = slider.querySelector('.slides');
+                        const images = slider.querySelectorAll('img');
+                        let index = 0;
+
+                        slider.querySelector('.next').onclick = () => {
+                            index = (index + 1) % images.length;
+                            slides.style.transform = `translateX(-${index * 100}%)`;
+                        };
+
+                        slider.querySelector('.prev').onclick = () => {
+                            index = (index - 1 + images.length) % images.length;
+                            slides.style.transform = `translateX(-${index * 100}%)`;
+                        };
+                    });
+
+                </script>
+                <h2 class="section-title">Weekly <span class="highlight">Announcements</span></h2>
+                <p class="section-subtitle">
+                    Stay updated with the latest news and announcements from EpochDev.
+                </p>
+
+                <div class="announcement-container">
+
+                    <div class="announcement-card">
+                        <span class="announcement-date">April 6th, 2026</span>
+                        <h3>💻 Deep Projects with Amir</h3>
+                        <p>We have a meeting every week and explore everything about robotic arm, only a few motivated students are working with it for now.</p>
+
+                        <div class="announcement-extra">
+                            <img src="/EpochDev/Pictures/FrontPage/announcements/Ann1/Ann1-3.mp4" alt="">
+                            <p> If you want to join, please contact with Amir to discuss about opportunities.</p>
+
+                            <video controls>
+                                <source src="/EpochDev/Pictures/FrontPage/announcements/Ann1/Ann1-3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="announcement-card">
+                        <span class="announcement-date">March 3rd, 2026</span>
+                        <h3>🚀 EpochDev Social Gathering</h3>
+                        <p>Join us this Friday for our weekly meetup. Networking, coding, and good vibes.</p>
+
+                        <div class="announcement-extra">
+                            <p>📍 Location: National College of Ireland — Spencer Dock - Student Union</p>
+                            <img src="/EpochDev/Pictures/FrontPage/announcements/Ann2/Gathering1-0.jpeg" alt="">
+                            
+                    </div>
+                </div>
+            </section>
 
             <section id="live-hackathons" style="text-align:center; margin-top:4rem;">
                 <h2 class="section-title">Live <span class="highlight">Hackathons</span></h2>
@@ -318,6 +381,5 @@
     <script src="Script.js"></script>
 </body>
 <footer class="site-footer container">
-  <p>© <span id="year">2026</span> EpochDev</p>
-  
+<p>© <span id="year">2026</span> EpochDev</p>
 </footer>

@@ -241,6 +241,69 @@ section { padding: 50px 0; }
 }
 .timeline-step p { font-size: 0.85rem; color: var(--text-color); margin: 0; }
 
+/*= Announcement Section =*/
+#announcement { padding: 80px 10%; color: #fff; }
+
+.announcement-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+
+.announcement-card {
+    background: rgba(255,255,255,0.03);
+    padding: 20px; border-radius: 12px; transition: all 0.4s ease; 
+    border: 1px solid transparent; overflow: hidden; }
+
+/* Hidden by default */
+.announcement-extra { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+
+/* When active */
+.announcement-card.active .announcement-extra { max-height: 1000px; }
+.announcement-card.active {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0,255,200,0.1);
+}
+
+/* EXPAND on hover */
+.announcement-card:hover .announcement-extra { max-height: 500px; opacity: 1; margin-top: 15px; }
+
+/* Style inner content */
+.announcement-extra img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+.announcement-extra video { width: 100%; border-radius: 8px; margin-top: 10px; }
+.announcement-card:hover { transform: translateY(-5px); border: 1px solid var(--primary-color); }
+.announcement-date { font-size: 0.8rem; color: #888; }
+.announcement-card h3 { margin: 10px 0; font-size: 1.2rem; }
+.announcement-card p { font-size: 0.95rem; color: #ccc; }
+.announcement-card:first-child { border: 1px solid var(--primary-color); }
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 /*= Previous Events Grid =*/
 
 
